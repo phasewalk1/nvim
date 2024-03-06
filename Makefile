@@ -6,6 +6,7 @@ OBJECTS := $(patsubst src/%.fnl, build/%.lua, $(SOURCES))
 all: $(OBJECTS) init.lua 
 
 clean:
+	cp build/theme.lua no-load/theme.lua
 	rm -rf build
 
 build/%.lua: src/%.fnl
@@ -15,4 +16,4 @@ build/%.lua: src/%.fnl
 init.lua: build/init.lua
 	cp $< $@
 	rm build/init.lua
-	cp no-load/theme.lua build/theme.lua
+	[ -f build/theme.lua ] || cp no-load/theme.lua build/theme.lua
