@@ -1,7 +1,6 @@
 (lambda noice-config []
   {:event :VeryLazy
-   :dependencies [:MunifTanjim/nui.nvim
-                  :rcarriga/nvim-notify]
+   :dependencies [:MunifTanjim/nui.nvim]
    :config (fn []
             (local noice (require :noice))
             (noice.setup {:lsp {:override { [:vim.lsp.util.convert_input_to_markdown_lines] true

@@ -1,6 +1,3 @@
-(fn list [args ...]
-  [args ...])
-
 (local telescope-bindings
    [{1 ";f"
      2 ":Telescope find_files"
@@ -8,6 +5,17 @@
     {1 ";w"
      2 ":Telescope live_grep"
      :description "Find word"}])
+
+(local git-bindings
+   [{1 "<leader>gg"
+     2 ":Neogit"
+       :description "Open Neogit"}
+    {1 "<leader>gd"
+     2 ":DiffviewOpen"
+       :description "Open diff view"}
+    {1 "<leader>gl"
+     2 ":Neogit log"
+       :description "Open Neogit log"}])
 
 (local buffer-bindings
    [{1 "<leader>bk"

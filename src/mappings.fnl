@@ -1,12 +1,15 @@
 (lambda mapping! [mode keys cmd opts]
   (vim.keymap.set mode keys cmd opts))
 
+;; --- Telescope ---
 (mapping! "n" ";f" "<cmd>Telescope find_files<CR>" {})
 (mapping! "n" ";w" "<cmd>Telescope live_grep<CR>" {})
 (mapping! "n" ";x" "<cmd>Telescope commands<CR>" {})
 
+;; --- Themery ---
 (mapping! "n" "<leader>th" "<cmd>Themery<cr>" {})
 
+;; --- Buffers ---
 (mapping! "n" "<leader>bk" "<cmd>bd<cr>" 
   {:noremap true
    :silent true})
@@ -15,7 +18,14 @@
 (mapping! "n" "<leader>bp" "<cmd>bp<cr>" {})
 (mapping! "n" "<leader>bf" "<cmd>Telescope buffers<cr>" {})
 
+;; --- Legendary ---
 (mapping! "n" "<leader>ch" "<cmd>Legendary keymaps<cr>" {})
+
+;; --- Git ---
+(mapping! "n" "<leader>gg" "<cmd>Neogit<cr>" {})
+(mapping! "n" "<leader>gd" "<cmd>DiffviewOpen<cr>" {})
+(mapping! "n" "<leader>gl" "<cmd>Neogit log<cr>" {})
+(mapping! "n" "<leader>gc" "<cmd>Telescope git_commits<cr>" {})
 
 (local buffers-mappings!
   {:b

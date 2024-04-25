@@ -19,6 +19,7 @@
    :gpanders/nvim-parinfer                     {}
    :folke/which-key.nvim                       (require :mappings)
    :mrjones2014/legendary.nvim                 (require :configs.editor.legendary)
+   :akinsho/toggleterm.nvim                    (require :configs.editor.toggleterm)
    :gelguy/wilder.nvim                         (require :configs.editor.commands.wilder)
    :liuchengxu/vista.vim                       (require :configs.ui.vista)
    :ellisonleao/glow.nvim                      {:lazy false :config true :cmd "Glow"}})
@@ -33,7 +34,13 @@
   {:williamboman/mason.nvim                    (require :configs.tools.mason)
    :nvim-treesitter/nvim-treesitter            (require :configs.lang.treesitter)
    :neovim/nvim-lspconfig                      (require :configs.lang.lsp)
-   :williamboman/mason-lspconfig.nvim          (require :configs.tools.mason-lspconfig)})
+   :williamboman/mason-lspconfig.nvim          (require :configs.tools.mason-lspconfig)
+   :nvimtools/none-ls.nvim                     (require :configs.tools.none-ls)
+   :neogitorg/neogit                           (require :configs.tools.neogit)})
+
+(local lang
+  ;; Rust
+  {:saecki/crates.nvim                         (require :configs.lang.rust.crates)})
 
 (local ui
   {:nvim-lualine/lualine.nvim                  (require :configs.ui.lualine)
@@ -61,6 +68,7 @@
 (load-plugins! editor)
 (load-plugins! ui)
 (load-plugins! themes)
+(load-plugins! lang)
 
 ;; Export the plugins
 plugins

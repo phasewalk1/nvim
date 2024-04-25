@@ -11,7 +11,7 @@
 
 (lambda treesitter-opts []
   {:config (fn []
-	    (let [ts (require "nvim-treesitter.configs")]
-	      (ts.setup (treesitter-guts))))})
+            (let [ts (require "nvim-treesitter.configs")]
+             (ts.setup (treesitter-guts))))})
 
 (treesitter-opts)
