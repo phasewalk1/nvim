@@ -38,8 +38,10 @@
   "telescope.nvim": { "branch": "master", "commit": "221778e93bfaa58bce4be4e055ed2edecc26f799" },
   "themery.nvim": { "branch": "main", "commit": "1005a58801276d29c4b1e11244cf7631250f9143" },
   "toggleterm.nvim": { "branch": "main", "commit": "066cccf48a43553a80a210eb3be89a15d789d6e6" },
+  "transparent.nvim": { "branch": "main", "commit": "fd35a46f4b7c1b244249266bdcb2da3814f01724" },
   "vim-colors-xcode": { "branch": "master", "commit": "3d1f81ce9550d609ce962f66407759eb581bd725" },
   "vim-illuminate": { "branch": "master", "commit": "305bf07b919ac526deb5193280379e2f8b599926" },
+  "vimtex": { "branch": "master", "commit": "a80934749c69cc6875b3c9b13ef59573a4824fb2" },
   "vista.vim": { "branch": "master", "commit": "f76cecc430003968e6174cae899c2cb2953219b7" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
   "wilder.nvim": { "branch": "master", "commit": "679f348dc90d80ff9ba0e7c470c40a4d038dcecf" }

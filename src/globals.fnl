@@ -1,13 +1,16 @@
 (lambda global-settings []
+  (vim.cmd "syntax enable")
   (set vim.g.mapleader " ")
   (set vim.g.maplocalleader ",")
+
+  (set vim.opt.wrap true)
+  (set vim.opt.linebreak true)
+  (set vim.opt.textwidth 80)
   (set vim.opt.expandtab true)
   (set vim.opt.autoindent true)
-
   (set vim.opt.laststatus 3)
   (set vim.opt.showmode false)
   (set vim.opt.termguicolors true)
-
   (set vim.opt.tabstop 4)
   (set vim.opt.laststatus 3)
   (set vim.opt.softtabstop 4)

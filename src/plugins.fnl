@@ -36,7 +36,8 @@
    :neovim/nvim-lspconfig                      (require :configs.lang.lsp)
    :williamboman/mason-lspconfig.nvim          (require :configs.tools.mason-lspconfig)
    :nvimtools/none-ls.nvim                     (require :configs.tools.none-ls)
-   :neogitorg/neogit                           (require :configs.tools.neogit)})
+   :neogitorg/neogit                           (require :configs.tools.neogit)
+   :lervag/vimtex                              (require :configs.tools.tex)})
 
 (local lang
   ;; Rust
@@ -48,7 +49,8 @@
    :glepnir/dashboard-nvim                     (require :configs.ui.dash)
    :folke/noice.nvim                           (require :configs.ui.noice)
    :utilyre/barbecue.nvim                      (require :configs.ui.barbecue)
-   :RRethy/vim-illuminate                      (require :configs.ui.illuminate)})
+   :RRethy/vim-illuminate                      (require :configs.ui.illuminate)
+   :xiyaowong/transparent.nvim                 (require :configs.ui.trans)})
 
 (local themes
   {:zaldih/themery.nvim                        (require :configs.ui.themery)

@@ -27,6 +27,10 @@
 (mapping! "n" "<leader>gl" "<cmd>Neogit log<cr>" {})
 (mapping! "n" "<leader>gc" "<cmd>Telescope git_commits<cr>" {})
 
+;; -- VimTex --
+(mapping! "n" "<leader>zv" "<cmd>VimtexView<cr>" {})
+(mapping! "n" "<leader>zb" "<cmd>VimtexCompile<cr>" {})
+
 (local buffers-mappings!
   {:b
     :name "Buffers"

@@ -5,6 +5,7 @@
                                                                        :rust_analyzer
                                                                        :pyre
                                                                        :biome
+                                                                       :gopls
                                                                        :clangd
                                                                        :fennel_language_server
                                                                        :bufls]}))})
