@@ -4,8 +4,6 @@
 
 ;; Load global settings
 (require :globals)
-;; Load keymappings
-(require :mappings)
 
 ;; Boostrap lazy.nvim
 (lambda bootstrap-lazy []
@@ -23,6 +21,6 @@
 
 ;; Register plugins w/ lazy
 (let [lazy (require :lazy)]
-  (lazy.setup (require :plugins)))
+  (lazy.setup (require :modules)))
 
 (require :theme)

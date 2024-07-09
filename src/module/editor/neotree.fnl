@@ -1,4 +1,4 @@
-(lambda neotree-config []
+(lambda config []
   {:lazy false
    :dependencies [:MunifTanjim/nui.nvim]
    :config 
@@ -8,4 +8,4 @@
       {:filesystem {:hijack_netrw_behavior "open_current"}})
      (vim.keymap.set "n" "<leader>e" ":Neotree toggle <CR>" {}))})
 
-(neotree-config)
+(config)

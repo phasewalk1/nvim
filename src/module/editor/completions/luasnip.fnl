@@ -1,7 +1,7 @@
-(lambda luasnip-config []
+(lambda config []
   {:lazy false
    :dependencies 
      [:saadparwaiz1/cmp_luasnip
       :rafamadriz/friendly-snippets]})
 
-(luasnip-config)
+(config)

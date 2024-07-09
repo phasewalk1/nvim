@@ -1,6 +1,6 @@
-(lambda autopair-opts []
+(lambda config []
   {:config (fn []
             (local autopairs (require "nvim-autopairs"))
             ((. autopairs :setup) {}))})
 
-(autopair-opts)
+(config)

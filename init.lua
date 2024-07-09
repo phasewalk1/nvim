@@ -1,7 +1,6 @@
 local builds_path = (vim.fn.stdpath("config") .. "/build/?.lua")
 package.path = (package.path .. ";" .. builds_path)
 require("globals")
-require("mappings")
 local function bootstrap_lazy()
   local lazypath = (vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
   if not vim.loop.fs_stat(lazypath) then
@@ -13,6 +12,6 @@ end
 bootstrap_lazy()
 do
   local lazy = require("lazy")
-  lazy.setup(require("plugins"))
+  lazy.setup(require("modules"))
 end
 return require("theme")
