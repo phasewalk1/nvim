@@ -28,11 +28,8 @@
                    ((. (require :cmp_nvim_lsp) :default_capabilities)))
             ((. (. (require :lspconfig) :lua_ls) :setup) {: capabilities})
             ((. (. (require :lspconfig) :rust_analyzer) :setup) {: capabilities})
-            ((. (. (require :lspconfig) :ruff) :setup) {: capabilities})
-            ((. (. (require :lspconfig) :bufls) :setup)
-             {: capabilities
-              :cmd [:bufls :--offset-encoding=utf-16]})
-            ((. (. (require :lspconfig) :tsserver) :setup) {: capabilities})
+            ((. (. (require :lspconfig) :pyright) :setup) {: capabilities})
+            ((. (. (require :lspconfig) :ts_ls) :setup) {: capabilities})
             ((. (. (require :lspconfig) :fennel_language_server) :setup) {: capabilities})
             ((. (. (require :lspconfig) :clangd) :setup) {: capabilities}))
   :lazy false

@@ -5,8 +5,7 @@
   (vimcmd! "filetype plugin indent on")
   (vimcmd! "syntax enable")
 
-  (set vim.g.vimtex_view_general_viewer :zathura)
-  (set vim.g.vimtex_compiler_method :latexmk))
+  (set vim.g.vimtex_view_method :skim))
 
 (lambda vimtex-config []
   {:lazy false

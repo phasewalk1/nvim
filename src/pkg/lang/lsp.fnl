@@ -6,16 +6,14 @@
 (lambda bootstrap-lsp-opts []
   {:config (fn []
             (local lspconfig (require "lspconfig"))
-            ((. lspconfig.ruff_lsp                   :setup) {})
-            ((. lspconfig.tsserver                   :setup) {})
+            ((. lspconfig.ts_ls                      :setup) {})
             ((. lspconfig.rust_analyzer              :setup) {})
             ((. lspconfig.lua_ls                     :setup) {})
             ((. lspconfig.fennel_language_server     :setup) (fennel-lsp-opts))
             ((. lspconfig.hls                        :setup) {})
             ((. lspconfig.solidity                   :setup) {})
             ((. lspconfig.clangd                     :setup) {})
-            ((. lspconfig.bufls                      :setup) {})
-            ((. lspconfig.gopls                      :setup) {})
+            ((. lspconfig.pyright                       :setup) {})
             (vim.keymap.set "n" "K" vim.lsp.buf.hover {})
             (vim.keymap.set "n" "gd" vim.lsp.buf.definition {})
             (vim.keymap.set "n" "gD" vim.lsp.buf.declaration {})

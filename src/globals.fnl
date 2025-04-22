@@ -16,4 +16,6 @@
 (set vim.opt.shiftwidth 4)
 (set vim.opt.number true)
 (set vim.opt.numberwidth 2)
+(set vim.opt.termguicolors true)
+(set vim.opt.cursorline true)
 
