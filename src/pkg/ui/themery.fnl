@@ -8,18 +8,22 @@
 
 (lambda themery-config []
   {:lazy false
+   :tag :v1.0.0
    :config (fn []
              ((. (require :themery) :setup) 
               {:themes
                 [:oxocarbon
-                 :catppuccin
                  :quantum
+                 :catppuccin
                  :xcode
                  :xcodedark
                  :xcodedarkhc
                  :doom-one
-                 :everblush]
-               :default :quantum
+                 :everblush
+                 :onedark
+                 :github_dark
+                 :poimandres]
+               :default :oxocarbon
                :themeConfigFile (expand-path! "$HOME/.config/nvim/build/theme.lua")
                :livePreview true}))})
 

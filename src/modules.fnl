@@ -3,55 +3,72 @@
 
 ;; ----------------- Editor ---------------------
 (local editor
-  {:nvim-telescope/telescope.nvim              (require :module.editor.telescope)
-   :nvim-neo-tree/neo-tree.nvim                (require :module.editor.neotree)
-   :windwp/nvim-autopairs                      (require :module.editor.autopair)
+  {:nvim-telescope/telescope.nvim              (require :pkg.editor.telescope)
+   :nvim-neo-tree/neo-tree.nvim                (require :pkg.editor.neotree)
+   :windwp/nvim-autopairs                      (require :pkg.editor.autopair)
    :folke/which-key.nvim                       (require :bindings)
-   :mrjones2014/legendary.nvim                 (require :module.editor.legendary)
-   :akinsho/toggleterm.nvim                    (require :module.editor.toggleterm)
-   :gelguy/wilder.nvim                         (require :module.editor.commands.wilder)
+   :mrjones2014/legendary.nvim                 (require :pkg.editor.legendary)
+   :akinsho/toggleterm.nvim                    (require :pkg.editor.toggleterm)
+   :gelguy/wilder.nvim                         (require :pkg.editor.commands.wilder)
    :liuchengxu/vista.vim                       {:lazy false}
    :ellisonleao/glow.nvim                      {:lazy false :config true :cmd "Glow"}
+   :nvim-neorg/neorg                           (require :pkg.editor.neorg)
    :folke/trouble.nvim                         {}
-   :gpanders/nvim-parinfer                     {}})
+   :evesdropper/luasnip-latex-snippets.nvim    {}
+   :gpanders/nvim-parinfer                     {}
+   :olical/conjure                             {}})
+
+  
+
+;; evesdropper/luasnip-latex-snippets.nvim
 
 ;; ----------------- Completions -----------------
 (local completions
   {:github/copilot.vim                         {:lazy false}
-   :L3MON4D3/LuaSnip                           (require :module.editor.completions.luasnip)
-   :hrsh7th/nvim-cmp                           (require :module.editor.completions.nvim-cmp)
-   :hrsh7th/cmp-nvim-lsp                       {}})
+   :L3MON4D3/LuaSnip                           (require :pkg.editor.completions.luasnip)
+   :hrsh7th/nvim-cmp                           (require :pkg.editor.completions.nvim-cmp)
+   :hrsh7th/cmp-nvim-lsp                       {}
+   :iurimateus/luasnip-latex-snippets.nvim     (require :pkg.editor.completions.latex-snippets)})
 
 ;; ----------------- Tooling ---------------------
 (local tooling
-  {:williamboman/mason.nvim                    (require :module.tools.mason)
-   :nvim-treesitter/nvim-treesitter            (require :module.lang.treesitter)
-   :neovim/nvim-lspconfig                      (require :module.lang.lsp)
-   :williamboman/mason-lspconfig.nvim          (require :module.tools.mason-lspconfig)
-   :nvimtools/none-ls.nvim                     (require :module.tools.none-ls)
-   :neogitorg/neogit                           (require :module.tools.neogit)
-   :lervag/vimtex                              (require :module.tools.tex)
-   :saecki/crates.nvim                         (require :module.lang.rust.crates)})
+  {:williamboman/mason.nvim                    (require :pkg.tools.mason)
+   :nvim-treesitter/nvim-treesitter            (require :pkg.lang.treesitter)
+   :neovim/nvim-lspconfig                      (require :pkg.lang.lsp)
+   :williamboman/mason-lspconfig.nvim          (require :pkg.tools.mason-lspconfig)
+   ;;:nvimtools/none-ls.nvim                     (require :pkg.tools.none-ls)
+   :neogitorg/neogit                           (require :pkg.tools.neogit)
+   :lervag/vimtex                              (require :pkg.tools.tex)
+   ;; :Olical/Conjure                             {}
+   :saecki/crates.nvim                         (require :pkg.lang.rust.crates)})
 
 ;; ----------------- UI Elements -----------------
 (local elements
-  {:nvim-lualine/lualine.nvim                  (require :module.ui.lualine)
-   :b0o/incline.nvim                           (require :module.ui.incline)
-   :glepnir/dashboard-nvim                     (require :module.ui.dash)
-   :folke/noice.nvim                           (require :module.ui.noice)
-   :utilyre/barbecue.nvim                      (require :module.ui.barbecue)
-   :RRethy/vim-illuminate                      (require :module.ui.illuminate)
+  {:nvim-lualine/lualine.nvim                  (require :pkg.ui.lualine)
+   :SmiteshP/nvim-navic                        (require :pkg.ui.navic)
+   :glepnir/dashboard-nvim                     (require :pkg.ui.dash)
+   :folke/noice.nvim                           (require :pkg.ui.noice)
+   :RRethy/vim-illuminate                      (require :pkg.ui.illuminate)
+   :willothy/nvim-cokeline                     (require :pkg.ui.cokeline)
+   :mawkler/modicator.nvim                     (require :pkg.ui.modicator)
+   :stevearc/dressing.nvim                     (require :pkg.ui.dressing)
+   :nvim-tree/nvim-web-devicons                (require :pkg.ui.devicons)
    :xiyaowong/transparent.nvim                 {:lazy false}})
 
 ;; ------------------ Themes ---------------------
 (local themes
-  {:zaldih/themery.nvim                        (require :module.ui.themery)
+  {:zaldih/themery.nvim                       (require :pkg.ui.themery)
    :lunacookies/vim-colors-xcode               {:lazy true}
    :everblush/nvim                             {:lazy true}
    :catppuccin/nvim                            {:lazy false :name :catppuccin}
    :kjssad/quantum.vim                         {:lazy true}
    :nyoom-engineering/oxocarbon.nvim           {:lazy true}
-   :NTBBloodbath/doom-one.nvim                 {:lazy true}})
+   :NTBBloodbath/doom-one.nvim                 {:lazy true}
+   ;; :navarasu/onedark.nvim                      {:lazy false}
+   :mawkler/onedark.nvim                       {:lazy false}
+   :projekt0n/github-nvim-theme                {:lazy false}
+   :olivercederborg/poimandres.nvim            {:lazy false}})
+  
 
 ;; Add a plugin to the table
 (lambda plug! [identifier opts]
@@ -64,9 +81,9 @@
           (tset plugin-spec k v))
         (table.insert plugins plugin-spec)))))
 
-;; Pack a module into the plugins table
-(lambda pack! [module]
-  (each [k v (pairs module)]
+;; Pack a pkg into the plugins table
+(lambda pack! [pkg]
+  (each [k v (pairs pkg)]
    (plug! k v)))
 
 (pack! tooling)

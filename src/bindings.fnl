@@ -17,5 +17,11 @@
    :init (fn []
           (local wk (require :which-key))
           (init! wk))})
-              
+
+;; Bind a key without registering it with which-key
+(lambda quickbind! [mode keys cmd opts]
+  (vim.keymap.set mode keys cmd opts))
+
+(quickbind! "n" "<leader>th" "<cmd>Themery<cr>" {})
+
 (wk-config)

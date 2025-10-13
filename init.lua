@@ -7,7 +7,7 @@ local function bootstrap_lazy()
     vim.fn.system({"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim", "--branch=stable", lazypath})
   else
   end
-  return (vim.opt.rtp):prepend(lazypath)
+  return vim.opt.rtp:prepend(lazypath)
 end
 bootstrap_lazy()
 do
