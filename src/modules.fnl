@@ -22,6 +22,8 @@
 
 ;; evesdropper/luasnip-latex-snippets.nvim
 
+;; evesdropper/luasnip-latex-snippets.nvim
+
 ;; ----------------- Completions -----------------
 (local completions
   {:github/copilot.vim                         {:lazy false}
@@ -36,7 +38,7 @@
    :nvim-treesitter/nvim-treesitter            (require :pkg.lang.treesitter)
    :neovim/nvim-lspconfig                      (require :pkg.lang.lsp)
    :williamboman/mason-lspconfig.nvim          (require :pkg.tools.mason-lspconfig)
-   ;;:nvimtools/none-ls.nvim                     (require :pkg.tools.none-ls)
+   :nvimtools/none-ls.nvim                     (require :pkg.tools.none-ls)
    :neogitorg/neogit                           (require :pkg.tools.neogit)
    :lervag/vimtex                              (require :pkg.tools.tex)
    ;; :Olical/Conjure                             {}
