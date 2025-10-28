@@ -1,4 +1,0 @@
-(lambda config []
-  {:opts {}})
-
-(config)

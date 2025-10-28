@@ -1,12 +1,12 @@
 SOURCES := $(shell find src -name '*.fnl')
 OBJECTS := $(patsubst src/%.fnl, build/%.lua, $(SOURCES))
 
+
 .PHONY: all clean
 
-all: $(OBJECTS) init.lua 
+all: $(OBJECTS) init.lua
 
 clean:
-	cp build/theme.lua load/theme.lua
 	rm -rf build
 
 build/%.lua: src/%.fnl
@@ -16,4 +16,3 @@ build/%.lua: src/%.fnl
 init.lua: build/init.lua
 	cp $< $@
 	rm build/init.lua
-	[ -f build/theme.lua ] || cp load/theme.lua build/theme.lua

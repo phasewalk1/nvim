@@ -1,0 +1,28 @@
+{:fennel      :
+ :rust        :
+ :python      :
+ :lua         :
+ :js          :
+ :go          :
+ :clojure     :
+ :haskell     :
+ :html        :
+ :css         :
+ :java        :
+ :c           :
+ :cpp         :
+ :ts          :
+ :ruby        :
+ :php         :
+ :sh          :
+ :swift       :
+ :erlang      :
+ :perl        :
+ :scala       :
+ :groovy      :
+ :common-lisp :
+ :make    :
+ :dockerfile  :
+ :scheme      :
+ :markdown    :
+}

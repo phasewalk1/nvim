@@ -1,27 +1,22 @@
-(local buffers (require :buffers))
-(local neogit (require :pkg.tools.neogit))
-(local telescope (require :pkg.editor.telescope))
-
-;; Initializes which-key
-(lambda init! [wk]
-  (set vim.o.timeout true)
-  (set vim.o.timeoutlen 300)
-  (wk.register buffers.bind)    ;; buffer keybindings
-  (wk.register neogit.bind)     ;; neogit keybindings
-  (wk.register telescope.bind)) ;; telescope keybindings
-
-;; Configures which-key
-(lambda wk-config []
-  {:event :VeryLazy
-   :lazy false
-   :init (fn []
-          (local wk (require :which-key))
-          (init! wk))})
-
-;; Bind a key without registering it with which-key
-(lambda quickbind! [mode keys cmd opts]
+(lambda bind! [mode keys cmd opts]
   (vim.keymap.set mode keys cmd opts))
 
-(quickbind! "n" "<leader>th" "<cmd>Themery<cr>" {})
+;; Telescope
+(bind! "n" ";f" "<cmd>Telescope find_files<cr>" {})
+(bind! "n" ";w" "<cmd>Telescope live_grep<cr>" {})
+;; Trouble 
+(bind! "n" "<leader>dt" "<cmd>Trouble diagnostics toggle<cr>" {})
+;; Themery
+(bind! "n" "<leader>th" "<cmd>Themery<cr>" {})
+;; Clear search highlights
+(bind! "n" "<leader>h" "<cmd>noh<cr>" 
+  {:desc "Clear search highlights"})
+;; Buffers
+(bind! "n" "<leader>bp" "<cmd>bprevious<cr>" 
+  {:desc "Previous buffer"}) 
+(bind! "n" "<leader>bn" "<cmd>bnext<cr>" 
+  {:desc "Next buffer"}) 
+;; Vista
+(bind! "n" "<leader>v" "<cmd>Vista<cr>"
+  {:desc "Vista toggle"})
 
-(wk-config)
