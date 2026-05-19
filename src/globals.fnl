@@ -4,7 +4,9 @@
 
 (set vim.opt.autoindent true)
 (set vim.opt.cursorline true)
+(set vim.opt.cursorlineopt both)
 ;;(set vim.opt.conceallevel 2)
 (set vim.opt.concealcursor "")
 (set vim.opt.laststatus 3)
 (set vim.opt.number true)
+(set vim.opt.relativenumber true)

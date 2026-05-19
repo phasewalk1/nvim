@@ -1,4 +1,4 @@
-{ stdenvNoCC, lib, fennel, gnumake }:
+{ stdenvNoCC, lib, luaPackages, gnumake }:
 
 stdenvNoCC.mkDerivation {
   pname = "phasewalk-nvim";
@@ -8,7 +8,7 @@ stdenvNoCC.mkDerivation {
   # so a `git status` change doesn't invalidate the Nix store path.
   src = lib.cleanSource ./.;
 
-  nativeBuildInputs = [ fennel gnumake ];
+  nativeBuildInputs = [ luaPackages.fennel gnumake ];
 
   buildPhase = ''
     runHook preBuild
